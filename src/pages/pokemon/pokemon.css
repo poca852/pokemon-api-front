@@ -1,0 +1,74 @@
+.container{
+   background-color: rgba(0,0,0,.95);
+   background-image: url('../../assets/background-home.jpg');
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   align-items: center;
+   justify-items: center;
+   width: 100vw;
+   height: 100vh;
+   overflow: scroll;
+}
+
+.container > div {
+   background-color: rgba(0,0,0,.85);
+   border-radius: 10px;
+   padding: 20px;
+   display: grid;
+   width: 650px;
+   grid-template-columns: 1fr;
+   grid-template-rows: repeat(4, auto);
+}
+
+.container > div button {
+   border: none;
+   background-color: #fa693b;
+   padding: 7px 10px;
+   margin-top: 15px;
+   cursor: pointer;
+}
+
+.container div .id{
+   justify-self: end;
+   color: white;
+}
+
+.container div .title{
+   justify-self: center;
+   color: white;
+}
+
+.container div .img{
+   justify-self: center;
+}
+
+.container div .img img{
+   width: 200px;
+}
+
+.container div .stats{
+   margin-top: 30px;
+   justify-self: center;
+}
+
+.container div .stats > h3{
+   font-size: 25px;
+   color: white;
+   text-align: center;
+}
+
+.container div .stats > div{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(6, auto);
+}
+
+.container div .stats div > h3{
+   color: white;
+}
+
+.container div .stats div > p {
+   margin-left: 15px;
+   color: white;
+}

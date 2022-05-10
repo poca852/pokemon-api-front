@@ -1,0 +1,12 @@
+.container-btn{
+   display: flex;
+   gap: 8px;
+}
+
+.btn-page{
+   cursor: pointer;
+   border: thin solid #fa693b;
+   border-radius: 5px;
+   background-color: #fa693b;
+   padding: 8px;
+}

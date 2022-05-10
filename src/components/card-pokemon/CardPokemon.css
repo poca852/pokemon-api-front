@@ -1,0 +1,36 @@
+a{
+   color: white;
+   text-decoration: none;
+}
+
+.card-pokemon{
+   background-color: rgba(0,0,0,.75);
+   border-radius: 20px;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   justify-items: center;
+   align-items: start;
+   padding: 15px;
+   height: 210px;
+   overflow: hidden;
+   transition: background-color .3s ease;
+}
+
+.card-pokemon:hover{
+   background-color: rgba(0,0,0, 1);
+}
+
+.card-pokemon img{
+   width: 70%;
+}
+
+.card-pokemon .tipos{
+   font-size: 17px;
+}
+
+@media screen and (max-width: 600px){
+   .card-pokemon{
+      width: 170px;
+   }
+}

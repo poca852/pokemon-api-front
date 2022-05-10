@@ -1,0 +1,56 @@
+nav {
+   background-color: rgba(0, 0, 0, .75);
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: 1fr;
+   align-items: center;
+   height: 50px;
+   width: 100%;
+   position: fixed;
+}
+
+nav .menu {
+   justify-self: start;
+   margin-left: 30px;
+}
+
+nav .menu a {
+   font-size: 18px;
+   transition: color .3s ease;
+}
+
+nav .menu a:hover {
+   color: #fa693b;
+}
+
+nav .menu a:first-child {
+   margin-right: 15px;
+}
+
+nav .search {
+   margin-right: 30px;
+   justify-self: end;
+}
+
+@media screen and (max-width: 600px) {
+   nav {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      grid-template-areas: "search"
+                           "menu";
+      
+      height: 100px;
+   }
+
+   nav .search{
+      grid-area: search;
+      align-self: center;
+      justify-self: center;
+   }
+
+   nav .menu {
+      grid-area: menu;
+      justify-self: center;
+      margin-bottom: 10px;
+   }
+}
