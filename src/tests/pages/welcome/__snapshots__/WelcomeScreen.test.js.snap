@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <WelcomeScreen /> Debe mostrar el componente WelcomeScreen correctamente 1`] = `
+<div
+  className="welcome__container"
+>
+  <div
+    className="welcome__logo"
+  >
+    <img
+      alt="logo de pokemon"
+      src="Pokemon-logo.png"
+    />
+    <button>
+      <NavLink
+        to="/home"
+      >
+        START
+      </NavLink>
+    </button>
+  </div>
+  <div
+    className="welcome__pikachu"
+  >
+    <img
+      alt="pikachu"
+      src="pikachu-circle.png"
+    />
+  </div>
+</div>
+`;
