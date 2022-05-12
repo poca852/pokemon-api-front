@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllPokemons, getTypes } from '../../actions/pokemons';
+import { getAllPokemons, getTypes, removeMsg, removeMsgError } from '../../actions/pokemons';
 import { CardPokemon } from '../../components/card-pokemon/CardPokemon';
 import { PorAtaque } from '../../components/filtros/PorAtaque';
 import { PorNombre } from '../../components/filtros/PorNombre';
@@ -21,8 +21,19 @@ export const HomeScreen = () => {
 
   useEffect(() => {
     dispatch(getAllPokemons())
-    dispatch(getTypes())
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(getTypes())
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(removeMsgError())
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(removeMsg())
+  }, [dispatch]);
 
   const maximo = Math.ceil(filterPokemons.length / 12)
 

@@ -26,7 +26,7 @@ export const Search = () => {
    return (
       <form onSubmit={handleSearch} autoComplete='off'>
          <input type='search'
-            placeholder='Buscar un pokemon'
+            placeholder='Search a Pokemon'
             name='input'
             value={input}
             onChange={inputChange}

@@ -77,7 +77,7 @@ export const Pokemon = () => {
                </div>
             </div>
 
-            <button onClick={handleVolver}>Volver</button>
+            <button onClick={handleVolver}>Back</button>
          </div>
       </div>
    )

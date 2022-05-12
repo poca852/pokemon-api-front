@@ -5,7 +5,7 @@ export const getAllPokemons = () => {
       dispatch(setLoading())
       const pokemonsInLocalStorage = JSON.parse(localStorage.getItem('pokemons'))
       if(pokemonsInLocalStorage === null){
-         const resp = await fetch('http://167.99.208.143/api/pokemons');
+         const resp = await fetch('http://localhost:3001/api/pokemons');
          const data = await resp.json();
          localStorage.setItem('pokemons', JSON.stringify(data.allPokemons));
          dispatch({type: types.loadAllPokemons, payload: data.allPokemons});
@@ -18,7 +18,7 @@ export const getAllPokemons = () => {
 
 export const getTypes = () => {
    return async(dispatch) => {
-      const resp = await fetch('http://167.99.208.143/api/pokemons/types');
+      const resp = await fetch('http://localhost:3001/api/pokemons/types');
       const typesPokemons = await resp.json();
       if(types){
          dispatch({type: types.getTypes, payload: typesPokemons})
@@ -30,7 +30,7 @@ export const searchPokemon = (pokemon) => {
    return async(dispatch) => {
       dispatch(setLoading())
       dispatch(removeMsgError())
-      const resp = await fetch(`http://167.99.208.143/api/pokemons?name=${pokemon}`)
+      const resp = await fetch(`http://localhost:3001/api/pokemons?name=${pokemon}`)
       const pokemonResp = await resp.json(); 
       if(pokemonResp.ok){
          dispatch({type: types.searchPokemon, payload: pokemonResp.pokemonByName})
@@ -54,7 +54,7 @@ export const searchPokemonById = (id) => {
    return async(dispatch) => {
       dispatch(setLoading())
       dispatch(removeMsgError())
-      const resp = await fetch(`http://167.99.208.143/api/pokemons/${id}`)
+      const resp = await fetch(`http://localhost:3001/api/pokemons/${id}`)
       const pokemon = await resp.json()
       if(pokemon.ok) {
          dispatch({type: types.searchPokemonById, payload: pokemon.pokemon})
@@ -103,7 +103,7 @@ export const createPokemon = (pokemon) => {
       dispatch(setLoading())
       dispatch(removeMsgError())
       dispatch(removeMsg())
-      const resp = await fetch(`http://167.99.208.143/api/pokemons`, {
+      const resp = await fetch(`http://localhost:3001/api/pokemons`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json'

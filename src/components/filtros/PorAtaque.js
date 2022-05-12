@@ -8,14 +8,15 @@ export const PorAtaque = () => {
   const dispatch = useDispatch()
 
   const filterByAttack = ({target}) => {
+    if(target.value === 'nothing') return;
     dispatch(attackOrderPokemon(target.value))
   }
 
   return (
     <select onChange={e => filterByAttack(e)}>
-      <option>Attack</option>
-      <option value='poderoso'>+ Attack</option>
-      <option value='debil'>- Attack</option>
+      <option value='nothing'>For Attack</option>
+      <option value='higth'>+ Attack</option>
+      <option value='low'>- Attack</option>
     </select>
   )
 }

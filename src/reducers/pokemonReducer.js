@@ -89,17 +89,17 @@ export const pokemonReducer = (state = initialState, action) => {
       case types.attackOrderPokemon:
          return {
             ...state,
-            filterPokemons: action.payload === 'debil'
-               ? state.allPokemons.sort((a, b) => {
-                  if(a.attack > b.attack) return 1
-                  if(b.attack > a.attack) return -1
-                  return 0
-               })
-               :state.allPokemons.sort((a, b) => {
-                  if(a.attack > b.attack) return -1;
+            filterPokemons: action.payload === 'higth'
+               ? state.allPokemons.sort((a,b) => {
+                  if(a.attack > b.attack) return -1
                   if(b.attack > a.attack) return 1
                   return 0
-               }),
+               })
+               : state.allPokemons.sort((a,b) => {
+                  if(a.attack > b.attack) return 1;
+                  if(b.attack > a.attack) return -1;
+                  return 0
+               })
          }
 
          case types.apiOrDbCreatedPokemon:
